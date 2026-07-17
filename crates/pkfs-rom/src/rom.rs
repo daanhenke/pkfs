@@ -222,10 +222,10 @@ fn parse_fnt(data: &[u8], h: &RomHeader) -> Vec<RomFile> {
 
     // Second pass: emit every named file with its full path.
     let mut files = Vec::new();
-    for i in 0..total_dirs as usize {
+    for (i, dir) in dirs.iter().enumerate() {
         let prefix = dir_path(i as i32);
-        let mut pos = fnt + dirs[i].subtable_offset as usize;
-        let mut file_id = dirs[i].first_file_id;
+        let mut pos = fnt + dir.subtable_offset as usize;
+        let mut file_id = dir.first_file_id;
         while pos < data.len() {
             let control = data[pos];
             pos += 1;

@@ -213,10 +213,7 @@ fn resolve_texsets(rom: &Rom, src: &MapSource, matrix: &MapMatrix) -> Option<Has
 }
 
 fn build_chunks(rom: &Rom, src: &MapSource, matrix: &MapMatrix) -> Vec<(u32, Vec<u8>)> {
-    let Ok(land) = rom
-        .file_by_path(&src.land_path)
-        .and_then(Narc::parse)
-    else {
+    let Ok(land) = rom.file_by_path(&src.land_path).and_then(Narc::parse) else {
         return Vec::new();
     };
     let mut terrains: HashMap<u32, Vec<u8>> = HashMap::new();
@@ -234,10 +231,7 @@ fn build_chunks(rom: &Rom, src: &MapSource, matrix: &MapMatrix) -> Vec<(u32, Vec
         // than guess (which binds wrong textures).
         return decode_untextured(&terrains);
     };
-    let Ok(tex_narc) = rom
-        .file_by_path(&src.texset_path)
-        .and_then(Narc::parse)
-    else {
+    let Ok(tex_narc) = rom.file_by_path(&src.texset_path).and_then(Narc::parse) else {
         return decode_untextured(&terrains);
     };
 
@@ -374,7 +368,8 @@ fn build_buildings(rom: &Rom, src: &MapSource, matrix: &MapMatrix) -> Buildings 
     let (Ok(land), Ok(build), Ok(prop_tex), Ok(area_narc), Some(area_by_land)) = (
         rom.file_by_path(&src.land_path).and_then(Narc::parse),
         rom.file_by_path(&src.build_path).and_then(Narc::parse),
-        rom.file_by_path(&src.prop_texset_path).and_then(Narc::parse),
+        rom.file_by_path(&src.prop_texset_path)
+            .and_then(Narc::parse),
         rom.file_by_path(&src.area_data_path).and_then(Narc::parse),
         resolve_areas(rom, src, matrix),
     ) else {

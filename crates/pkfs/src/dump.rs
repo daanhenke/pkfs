@@ -118,7 +118,7 @@ fn process_nitro3d(buffers: &[Vec<u8>], base: &Path, r: &mut DumpReport) -> Resu
 fn nearest<T>(items: &[(usize, T)], to: usize) -> Option<&T> {
     items
         .iter()
-        .min_by_key(|(i, _)| if *i > to { *i - to } else { to - *i })
+        .min_by_key(|(i, _)| i.abs_diff(to))
         .map(|(_, v)| v)
 }
 
@@ -200,11 +200,11 @@ pub fn collect_sprites(narc: &Narc, raw: bool, cipher: SpriteCipher) -> Vec<(Str
             if pal_count == 0 {
                 continue;
             }
-            for g in group_start..ci {
-                let slot = (g - group_start) % pal_count;
+            for (offset, (id, data)) in chars[group_start..ci].iter().enumerate() {
+                let slot = offset % pal_count;
                 let suffix = if slot != 0 { "_shiny" } else { "" };
-                let img = render_ncgr_sheet(&chars[g].1, &pals[pal_start + slot].1, 0, true);
-                images.push((format!("{:05}{suffix}", chars[g].0), img));
+                let img = render_ncgr_sheet(data, &pals[pal_start + slot].1, 0, true);
+                images.push((format!("{id:05}{suffix}"), img));
             }
         }
         return images;

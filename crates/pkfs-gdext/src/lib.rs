@@ -121,8 +121,8 @@ impl PkfsRom {
     /// `chunk_buildings` maps a chunk id -> Array of { key, pos, rot, scale }
     /// placements (Vector3s in world units, relative to the chunk origin).
     #[func]
-    fn load_overworld(&self) -> Dictionary {
-        let mut d = Dictionary::new();
+    fn load_overworld(&self) -> VarDictionary {
+        let mut d = VarDictionary::new();
         let Some(rom) = &self.rom else { return d };
         let Some(ow) = pkfs::load_overworld(rom) else {
             return d;
@@ -152,14 +152,20 @@ impl PkfsRom {
         d.set("building_keys", bkeys);
         d.set("building_glbs", bglbs);
 
-        let mut chunk_buildings = Dictionary::new();
+        let mut chunk_buildings = VarDictionary::new();
         for (chunk_id, list) in &ow.buildings {
-            let mut arr: Array<Dictionary> = Array::new();
+            let mut arr: Array<VarDictionary> = Array::new();
             for p in list {
-                let mut e = Dictionary::new();
+                let mut e = VarDictionary::new();
                 e.set("key", p.glb_key as i64);
-                e.set("pos", Vector3::new(p.position[0], p.position[1], p.position[2]));
-                e.set("rot", Vector3::new(p.rotation[0], p.rotation[1], p.rotation[2]));
+                e.set(
+                    "pos",
+                    Vector3::new(p.position[0], p.position[1], p.position[2]),
+                );
+                e.set(
+                    "rot",
+                    Vector3::new(p.rotation[0], p.rotation[1], p.rotation[2]),
+                );
                 e.set("scale", Vector3::new(p.scale[0], p.scale[1], p.scale[2]));
                 arr.push(&e);
             }
@@ -171,8 +177,8 @@ impl PkfsRom {
 
     /// Dump every recognised asset to `out_dir`. Returns a dictionary of totals.
     #[func]
-    fn dump(&self, out_dir: GString, raw: bool) -> Dictionary {
-        let mut d = Dictionary::new();
+    fn dump(&self, out_dir: GString, raw: bool) -> VarDictionary {
+        let mut d = VarDictionary::new();
         if let Some(rom) = &self.rom {
             match pkfs::dump_rom(rom, std::path::Path::new(&out_dir.to_string()), raw) {
                 Ok(r) => {

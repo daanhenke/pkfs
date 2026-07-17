@@ -162,13 +162,13 @@ pub fn render_ncgr_sheet(
         tw = ((num_tiles as f64).sqrt().round() as i32).max(1);
     }
     if th <= 0 {
-        th = ((num_tiles + tw as usize - 1) / tw as usize) as i32;
+        th = num_tiles.div_ceil(tw as usize) as i32;
     }
     let width = (tw as u32) * 8;
     let height = (th as u32) * 8;
     let mut img = Image::new(width, height);
 
-    let mut emit = |img: &mut Image, x: u32, y: u32, idx: u8| {
+    let emit = |img: &mut Image, x: u32, y: u32, idx: u8| {
         let rgba = if idx == 0 && color0_transparent {
             [0, 0, 0, 0]
         } else if ncgr.bit_depth == 4 {
