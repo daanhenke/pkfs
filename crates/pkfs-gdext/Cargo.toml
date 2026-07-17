@@ -1,0 +1,13 @@
+[package]
+name = "pkfs-gdext"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Godot 4 GDExtension bindings for pkfs: open a Pokemon ROM and pull models/textures/sprites into Godot."
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+pkfs.workspace = true
+godot.workspace = true

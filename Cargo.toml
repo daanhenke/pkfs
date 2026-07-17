@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/pkfs-nitro",
+    "crates/pkfs-rom",
+    "crates/pkfs-2d",
+    "crates/pkfs",
+    "crates/pkfs-cli",
+    "crates/pkfs-gdext",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/daanhenkek/pkfs"
+
+[workspace.dependencies]
+pkfs = { path = "crates/pkfs" }
+pkfs-nitro = { path = "crates/pkfs-nitro" }
+pkfs-rom = { path = "crates/pkfs-rom" }
+pkfs-2d = { path = "crates/pkfs-2d" }
+anyhow = "1"
+png = "0.17"
+clap = { version = "4", features = ["derive"] }
+godot = "0.4"

@@ -1,0 +1,25 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# ROMs and dumped assets
+/roms/
+/dump/
+/scratch/
+/reference/
+/scripts/
+*.nds
+*.narc
+
+# Godot
+/game/.godot/
+/game/bin/*.dll
+/game/bin/*.so
+/game/bin/*.dylib
+
+# IDE / OS
+/.vs/
+/.vscode/
+/.idea/
+Thumbs.db
+.DS_Store

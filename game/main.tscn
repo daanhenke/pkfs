@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pkfsmapview"]
+
+[ext_resource type="Script" path="res://map_viewer.gd" id="1"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1")

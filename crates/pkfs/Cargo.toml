@@ -1,0 +1,13 @@
+[package]
+name = "pkfs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Facade for pkfs: ROM/NARC filesystem, 2D graphics and Nitro models, plus the full asset dump."
+
+[dependencies]
+pkfs-nitro.workspace = true
+pkfs-rom.workspace = true
+pkfs-2d.workspace = true
+anyhow.workspace = true
+png.workspace = true

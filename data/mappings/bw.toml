@@ -1,0 +1,71 @@
+# bw mapping - de-anonymised special file paths (community-sourced)
+
+[[games]]
+id = "black"
+code_prefix = "IRB"
+display_name = "Pokemon Black"
+
+[[games]]
+id = "white"
+code_prefix = "IRA"
+display_name = "Pokemon White"
+
+[[files]]
+path = "a/0/0/4"
+label = "pokegra"
+kind = "pokemon-sprite"
+description = "Pokemon sprites"
+
+[[files]]
+path = "a/0/0/7"
+label = "pokeicon"
+kind = "pokemon-icon"
+description = "Pokemon icons"
+
+[[files]]
+path = "a/0/0/8"
+label = "pokemodel"
+kind = "pokemon-model"
+description = "In-menu Pokemon models"
+
+[[files]]
+path = "a/0/1/6"
+label = "personal"
+kind = "data"
+description = "Pokemon base stats"
+
+[[files]]
+path = "a/0/1/8"
+label = "levelupmoves"
+kind = "data"
+description = "Level-up moves"
+
+[[files]]
+path = "a/0/1/9"
+label = "evolve"
+kind = "data"
+description = "Evolution data"
+
+[[files]]
+path = "a/0/2/1"
+label = "moves"
+kind = "data"
+description = "Move data"
+
+[[files]]
+path = "a/0/1/1"
+label = "battle_gfx"
+kind = "map-texture"
+description = "Battle backgrounds, textures & UI"
+
+[[files]]
+path = "a/0/1/2"
+label = "zonedata"
+kind = "map-data"
+description = "Map/zone association table"
+
+[[files]]
+path = "a/1/2/6"
+label = "encounters"
+kind = "encounter-data"
+description = "Wild encounters"

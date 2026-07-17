@@ -1,0 +1,419 @@
+# hgss mapping - de-anonymised special file paths (community-sourced)
+
+[[games]]
+id = "heartgold"
+code_prefix = "IPK"
+display_name = "Pokemon HeartGold"
+
+[[games]]
+id = "soulsilver"
+code_prefix = "IPG"
+display_name = "Pokemon SoulSilver"
+
+[[files]]
+path = "a/0/0/2"
+label = "personal"
+kind = "data"
+description = "Pokemon base data"
+
+[[files]]
+path = "a/0/3/3"
+label = "wotbl"
+kind = "data"
+description = "Learnsets"
+
+[[files]]
+path = "a/0/0/3"
+label = "growtbl"
+kind = "data"
+description = "Growth tables"
+
+[[files]]
+path = "a/0/3/4"
+label = "evo"
+kind = "data"
+description = "Evolution data"
+
+[[files]]
+path = "a/0/2/9"
+label = "kowaza"
+kind = "data"
+description = "Egg move table"
+
+[[files]]
+path = "a/0/2/0"
+label = "poke_icon"
+kind = "pokemon-icon"
+description = "Pokemon icons"
+
+[[files]]
+path = "a/2/2/8"
+label = "dp_poke_icon"
+kind = "pokemon-icon"
+description = "Leftover D/P Pokemon icons"
+
+[[files]]
+path = "a/0/0/4"
+label = "pokegra"
+kind = "pokemon-sprite"
+description = "Pokemon sprites"
+
+[[files]]
+path = "a/1/1/1"
+label = "pokeanm"
+kind = "pokemon-sprite"
+description = "Pokemon sprite animations"
+
+[[files]]
+path = "a/0/6/9"
+label = "pokefoot"
+kind = "pokemon-footprint"
+description = "Pokemon footprint icons"
+
+[[files]]
+path = "a/1/1/4"
+label = "otherpoke"
+kind = "pokemon-sprite"
+description = "Alt forme sprites"
+
+[[files]]
+path = "a/1/1/7"
+label = "height_o"
+kind = "data"
+description = "Height order"
+
+[[files]]
+path = "a/1/3/5"
+label = "poke_shadow"
+kind = "data"
+description = "Foe Pokemon shadow size"
+
+[[files]]
+path = "a/1/3/7"
+label = "poke_shadow_ofx"
+kind = "data"
+description = "Foe Pokemon shadow X offsets"
+
+[[files]]
+path = "a/1/3/2"
+label = "poke_yofs"
+kind = "data"
+description = "Foe Pokemon Y offsets"
+
+[[files]]
+path = "a/0/0/5"
+label = "height"
+kind = "data"
+description = "Friendly Pokemon Y offset"
+
+[[files]]
+path = "a/0/4/3"
+label = "area_build"
+kind = "map-data"
+description = "Assigns textures to models"
+
+[[files]]
+path = "a/0/4/2"
+label = "area_data"
+kind = "map-data"
+description = "Assigns builds/texsets to maps"
+
+[[files]]
+path = "a/0/7/0"
+label = "areabm_texset"
+kind = "building-texture"
+description = "Building textures"
+
+[[files]]
+path = "a/1/0/6"
+label = "bm_anime"
+kind = "data"
+description = "Model animation files"
+
+[[files]]
+path = "a/0/4/0"
+label = "bm_field"
+kind = "field-model"
+description = "Exterior models"
+
+[[files]]
+path = "a/1/4/8"
+label = "bm_room"
+kind = "field-model"
+description = "Interior models"
+
+[[files]]
+path = "a/0/6/5"
+label = "land_data"
+kind = "map-data"
+description = "Map files"
+
+[[files]]
+path = "a/0/4/1"
+label = "map_matrix"
+kind = "map-data"
+description = "Map connections"
+
+[[files]]
+path = "a/0/4/4"
+label = "map_tex_set"
+kind = "map-texture"
+description = "Map textures"
+
+[[files]]
+path = "a/1/0/3"
+label = "fldeff"
+kind = "data"
+description = "Field effects"
+
+[[files]]
+path = "a/1/3/9"
+label = "fldtanime"
+kind = "data"
+description = "Field animations"
+
+[[files]]
+path = "a/0/8/1"
+label = "mmodel"
+kind = "overworld-sprite"
+description = "Overworld character models"
+
+[[files]]
+path = "a/0/4/7"
+label = "move_model_list"
+kind = "data"
+description = "Movable model list"
+
+[[files]]
+path = "a/0/3/7"
+label = "hg_enc_data"
+kind = "encounter-data"
+description = "HG field encounters"
+
+[[files]]
+path = "a/1/3/6"
+label = "ss_enc_data"
+kind = "encounter-data"
+description = "SS field encounters"
+
+[[files]]
+path = "a/2/5/3"
+label = "hg_hb_encdata"
+kind = "encounter-data"
+description = "HG headbutt encounters"
+
+[[files]]
+path = "a/2/5/2"
+label = "ss_hb_encdata"
+kind = "encounter-data"
+description = "SS headbutt encounters"
+
+[[files]]
+path = "a/2/3/0"
+label = "sz_enc_data"
+kind = "encounter-data"
+description = "Safari Zone encounters"
+
+[[files]]
+path = "a/1/0/2"
+label = "encdata_ex"
+kind = "encounter-data"
+description = "Leftover D/P/Pt encounters"
+
+[[files]]
+path = "a/0/1/2"
+label = "scr_seq"
+kind = "data"
+description = "Scripts"
+
+[[files]]
+path = "a/0/1/3"
+label = "scr_msg"
+kind = "text"
+description = "Script messages"
+
+[[files]]
+path = "a/0/3/2"
+label = "zone_event"
+kind = "data"
+description = "Events"
+
+[[files]]
+path = "a/0/2/7"
+label = "msg"
+kind = "text"
+description = "Text files"
+
+[[files]]
+path = "a/1/1/2"
+label = "fld_trade"
+kind = "data"
+description = "In-game trades"
+
+[[files]]
+path = "a/0/7/4"
+label = "zukan_data"
+kind = "pokedex"
+description = "Pokedex data"
+
+[[files]]
+path = "a/2/1/4"
+label = "zukan_data_gira"
+kind = "pokedex"
+description = "Giratina Pokedex"
+
+[[files]]
+path = "a/1/3/3"
+label = "zukan_enc_x"
+kind = "pokedex"
+description = "Pokedex encounter data"
+
+[[files]]
+path = "a/0/6/8"
+label = "zukan"
+kind = "pokedex"
+description = "Pokedex graphics"
+
+[[files]]
+path = "a/0/9/9"
+label = "tr_ai_seq"
+kind = "data"
+description = "Trainer AI"
+
+[[files]]
+path = "a/0/5/5"
+label = "trdat"
+kind = "data"
+description = "Trainer data"
+
+[[files]]
+path = "a/0/5/6"
+label = "trpoke"
+kind = "data"
+description = "Trainer Pokemon data"
+
+[[files]]
+path = "a/0/5/7"
+label = "trtbl"
+kind = "data"
+description = "Trainer text table"
+
+[[files]]
+path = "a/0/0/6"
+label = "trbgra"
+kind = "trainer-sprite"
+description = "Trainer back sprites"
+
+[[files]]
+path = "a/0/5/8"
+label = "trfgra"
+kind = "trainer-sprite"
+description = "Trainer front sprites"
+
+[[files]]
+path = "a/0/1/1"
+label = "waza_tbl"
+kind = "data"
+description = "Move table"
+
+[[files]]
+path = "a/0/1/0"
+label = "we"
+kind = "move-effect"
+description = "Move effects"
+
+[[files]]
+path = "a/0/6/1"
+label = "we_sub"
+kind = "move-effect"
+description = "Move effects (sub)"
+
+[[files]]
+path = "a/0/3/0"
+label = "be_seq"
+kind = "data"
+description = "Move behaviours"
+
+[[files]]
+path = "a/0/0/1"
+label = "sub_seq"
+kind = "data"
+description = "Move sub-sequence data"
+
+[[files]]
+path = "a/0/0/0"
+label = "waza_seq"
+kind = "data"
+description = "Move sequence data"
+
+[[files]]
+path = "a/0/2/2"
+label = "wechar"
+kind = "move-effect"
+description = "Move tiles"
+
+[[files]]
+path = "a/0/2/3"
+label = "wepltt"
+kind = "move-effect"
+description = "Move palettes"
+
+[[files]]
+path = "a/0/2/4"
+label = "wecell"
+kind = "move-effect"
+description = "Move cells"
+
+[[files]]
+path = "a/0/2/5"
+label = "wecellanm"
+kind = "move-effect"
+description = "Move animations"
+
+[[files]]
+path = "a/0/1/7"
+label = "item_data"
+kind = "item"
+description = "Item data"
+
+[[files]]
+path = "a/0/6/6"
+label = "nuts_data"
+kind = "item"
+description = "Berry data"
+
+[[files]]
+path = "a/0/1/8"
+label = "item_icon"
+kind = "item"
+description = "Item icons"
+
+[[files]]
+path = "a/2/6/2"
+label = "op_demo"
+kind = "demo"
+description = "Opening demo"
+
+[[files]]
+path = "a/0/4/6"
+label = "titledemo"
+kind = "demo"
+description = "Title screen"
+
+[[files]]
+path = "a/1/2/0"
+label = "intro"
+kind = "demo"
+description = "Introduction sequence"
+
+[[files]]
+path = "a/2/6/3"
+label = "ending"
+kind = "demo"
+description = "Ending credits"
+
+[[files]]
+path = "a/0/8/9"
+label = "demo_trade"
+kind = "demo"
+description = "Trade scene"

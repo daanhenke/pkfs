@@ -1,0 +1,9 @@
+[package]
+name = "pkfs-2d"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Nitro 2D graphics (NCLR palettes, NCGR tiles, NCER cells) with pokegra sprite decryption for Gen 4/5 Pokemon."
+
+[dependencies]
+anyhow.workspace = true

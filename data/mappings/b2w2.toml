@@ -1,0 +1,41 @@
+# b2w2 mapping - de-anonymised special file paths (community-sourced)
+
+[[games]]
+id = "black2"
+code_prefix = "IRE"
+display_name = "Pokemon Black 2"
+
+[[games]]
+id = "white2"
+code_prefix = "IRD"
+display_name = "Pokemon White 2"
+
+[[files]]
+path = "a/0/0/4"
+label = "pokegra"
+kind = "pokemon-sprite"
+description = "Pokemon sprites"
+
+[[files]]
+path = "a/0/1/6"
+label = "personal"
+kind = "data"
+description = "Pokemon base stats"
+
+[[files]]
+path = "a/0/1/8"
+label = "levelupmoves"
+kind = "data"
+description = "Level-up moves"
+
+[[files]]
+path = "a/0/1/9"
+label = "evolve"
+kind = "data"
+description = "Evolution data"
+
+[[files]]
+path = "a/2/9/1"
+label = "trfgra"
+kind = "trainer-sprite"
+description = "Trainer battle sprites"

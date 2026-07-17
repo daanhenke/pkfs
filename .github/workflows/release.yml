@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release:
+    name: Build & publish (${{ matrix.target_name }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target_name: linux-x86_64
+            cli: pkfs
+            gdext: libpkfs_gdext.so
+          - os: windows-latest
+            target_name: windows-x86_64
+            cli: pkfs.exe
+            gdext: pkfs_gdext.dll
+          - os: macos-latest
+            target_name: macos-x86_64
+            cli: pkfs
+            gdext: libpkfs_gdext.dylib
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Build CLI + GDExtension
+        run: cargo build --release -p pkfs-cli -p pkfs-gdext
+
+      - name: Stage artifacts
+        shell: bash
+        run: |
+          mkdir -p dist
+          cp "target/release/${{ matrix.cli }}" dist/
+          cp "target/release/${{ matrix.gdext }}" dist/
+          cp README.md LICENSE dist/ 2>/dev/null || true
+
+      - name: Archive
+        shell: bash
+        run: |
+          name="pkfs-${{ github.ref_name }}-${{ matrix.target_name }}"
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            7z a "${name}.zip" ./dist/*
+          else
+            tar czf "${name}.tar.gz" -C dist .
+          fi
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          files: |
+            pkfs-*.zip
+            pkfs-*.tar.gz

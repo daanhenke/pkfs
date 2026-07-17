@@ -1,0 +1,19 @@
+[package]
+name = "pkfs-nitro"
+version = "0.1.0"
+edition = "2021"
+license = "0BSD"
+description = "Nitro (NSBMD/NSBTX/...) model, texture and animation decoding, vendored from apicula (0BSD)."
+
+[lib]
+name = "pkfs_nitro"
+# The vendored apicula doc-comments contain prose/pseudocode (∑, `object!`, ...)
+# that is not valid Rust, so don't compile them as doctests.
+doctest = false
+
+[dependencies]
+anyhow = "1"
+cgmath = "0.16.0"
+json = "0.12.4"
+log = { version = "0.4", features = ["std"] }
+png = "0.17"
