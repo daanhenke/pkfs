@@ -10,11 +10,11 @@ pub struct Cur<'a> {
 }
 
 impl<'a> Cur<'a> {
-    pub fn new(buf: &[u8]) -> Cur {
+    pub fn new(buf: &[u8]) -> Cur<'_> {
         Cur { buf_: buf, pos_: 0 }
     }
 
-    pub fn from_buf_pos(buf: &[u8], pos: usize) -> Cur {
+    pub fn from_buf_pos(buf: &[u8], pos: usize) -> Cur<'_> {
         Cur {
             buf_: buf,
             pos_: pos,

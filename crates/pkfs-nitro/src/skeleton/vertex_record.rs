@@ -45,7 +45,7 @@ struct Builder<'a> {
 }
 
 impl<'a> Builder<'a> {
-    fn new(model: &Model) -> Builder {
+    fn new(model: &Model) -> Builder<'_> {
         Builder {
             model,
             vr: VertexRecord {

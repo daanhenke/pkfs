@@ -127,7 +127,7 @@ impl<'a, T: Viewable> View<'a, T> {
     /// The view must contain an even number of `T`s; that is, the length
     /// of `buf` in bytes must be a multiple of the `Viewable::size()` of
     /// `T`.
-    pub fn from_buf(buf: &[u8]) -> View<T> {
+    pub fn from_buf(buf: &[u8]) -> View<'_, T> {
         let size = <T as Viewable>::size();
         assert!(size == 0 || buf.len() % size == 0);
         View {

@@ -91,7 +91,7 @@ impl<T> Tree<T> {
     }
 
     /// Iterator over all the children of node.
-    pub fn children(&self, node: NodeIdx) -> Children<T> {
+    pub fn children(&self, node: NodeIdx) -> Children<'_, T> {
         Children {
             tree: self,
             next_child: self.nodes[node as usize].first_child,
