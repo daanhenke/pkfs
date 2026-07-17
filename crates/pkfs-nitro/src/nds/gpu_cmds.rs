@@ -83,7 +83,7 @@ pub struct CmdParser<'a> {
 }
 
 impl<'a> CmdParser<'a> {
-    pub fn new(cmds: &[u8]) -> CmdParser {
+    pub fn new(cmds: &[u8]) -> CmdParser<'_> {
         CmdParser {
             opcode_fifo: &cmds[0..0],
             buf: cmds,

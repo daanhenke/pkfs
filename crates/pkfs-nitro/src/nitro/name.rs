@@ -15,7 +15,7 @@ impl Name {
 
     /// Returns an object that formats the name as a non-empty string
     /// of letters, digits, and underscores.
-    pub fn print_safe(&self) -> NameSafePrinter {
+    pub fn print_safe(&self) -> NameSafePrinter<'_> {
         NameSafePrinter(self)
     }
 }

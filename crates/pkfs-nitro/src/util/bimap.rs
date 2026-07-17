@@ -45,7 +45,7 @@ where
         self.rev.contains_key(v)
     }
 
-    pub fn iter(&self) -> std::collections::hash_map::Iter<K, V> {
+    pub fn iter(&self) -> std::collections::hash_map::Iter<'_, K, V> {
         self.fwd.iter()
     }
 }
