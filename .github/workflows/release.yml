@@ -4,6 +4,10 @@ on:
   push:
     tags: ["v*"]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to build (e.g. v0.1.0)"
+        required: true
 
 permissions:
   contents: write
@@ -31,6 +35,10 @@ jobs:
             cli: pkfs
             gdext: libpkfs_gdext.dylib
     runs-on: ${{ matrix.os }}
+    env:
+      # The tag drives both the archive names and the release. On a tag push
+      # this is the pushed tag; on a manual run it's the required `tag` input.
+      RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
@@ -50,7 +58,7 @@ jobs:
       - name: Archive
         shell: bash
         run: |
-          name="pkfs-${{ github.ref_name }}-${{ matrix.target_name }}"
+          name="pkfs-${RELEASE_TAG}-${{ matrix.target_name }}"
           if [ "${{ runner.os }}" = "Windows" ]; then
             7z a "${name}.zip" ./dist/*
           else
@@ -61,6 +69,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           draft: true
+          tag_name: ${{ env.RELEASE_TAG }}
           files: |
             pkfs-*.zip
             pkfs-*.tar.gz
